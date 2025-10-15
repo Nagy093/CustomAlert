@@ -1,0 +1,74 @@
+/* ========================================================================== */
+/* 🎨 CustomAlert.css (v3.2 Final) - 중앙형 Custom Alert / Confirm */
+/* fade-out 시 alert 박스만 자연스럽게 사라지고 배경은 그대로 유지됨 */
+/* ========================================================================== */
+
+.ca-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.ca-box {
+  background: #fff;
+  color: #111;
+  width: 320px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 24px 20px;
+  animation: pop 0.3s ease-out;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.ca-success { border-top: 5px solid #22c55e; }
+.ca-error   { border-top: 5px solid #ef4444; }
+.ca-warning { border-top: 5px solid #f59e0b; }
+.ca-info    { border-top: 5px solid #3b82f6; }
+
+.ca-icon { font-size: 36px; margin-bottom: 10px; }
+.ca-message {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  word-break: keep-all;
+}
+
+.ca-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.ca-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.ca-ok { background-color: #2563eb; color: #fff; }
+.ca-ok:hover { background-color: #1e40af; }
+.ca-cancel { background-color: #e5e7eb; color: #111; }
+.ca-cancel:hover { background-color: #d1d5db; }
+
+.ca-box.fade-out {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

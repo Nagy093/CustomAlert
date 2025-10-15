@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CustomAlert</title>
+  <link rel="stylesheet" href="../css/CustomAlert.css">
+</head>
+<body style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:1rem;">
+  <h2>🎯 CustomAlert</h2>
+  <button onclick="ui.alert('완료!', 'success')">✅ 성공 알림</button>
+  <button onclick="ui.alert('오류입니다.', 'error')">❌ 오류 알림</button>
+  <button onclick="ui.confirm('정말 삭제하시겠습니까?', (ok)=>{ if(ok) ui.alert('삭제 완료!', 'success'); else ui.alert('취소되었습니다.', 'info'); }, 'warning')">⚠️ 확인창</button>
+  <script src="../js/CustomAlert.js"></script>
+</body>
+</html>
