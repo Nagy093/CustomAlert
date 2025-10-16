@@ -1,17 +1,5 @@
-// ============================================================================
-// 📁 CustomAlert.js — 중앙형 Custom Alert / Confirm (v3.2 Final)
-// ----------------------------------------------------------------------------
-// ✅ 주요 특징
-// 1. alert() → 2초 후 자동 fade-out (배경 고정)
-// 2. confirm() → ESC, 배경 클릭, 버튼 클릭으로 닫힘
-// 3. fade-out은 alert 박스에만 적용 (자연스러운 UX)
-// 4. 중복 콜백 완벽 방지 (ESC & 클릭 동시 시 1회만 호출)
-// 5. main.js / admin.js 어디서든 사용 가능
-// ============================================================================
-
 window.ui = window.ui || {};
 
-// ✅ 단순 알림 (자동 닫힘)
 ui.alert = function (message, type = "info") {
   document.querySelector(".ca-backdrop")?.remove();
 
@@ -52,7 +40,6 @@ ui.alert = function (message, type = "info") {
   setTimeout(closeModal, 2000);
 };
 
-// ✅ 확인창 (ESC / 배경 / 버튼 닫기)
 ui.confirm = function (message, callback, type = "warning") {
   document.querySelector(".ca-backdrop")?.remove();
 
